@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package omlet;
+
+service ContainerService {
+    rpc AttachStandardOutput(AttachStandardOutputRequest) returns (stream AttachStandardOutputResponse) {}
+}
+
+message AttachStandardOutputRequest {
+    string ip_address = 1;
+    string container_id = 2;
+}
+
+message AttachStandardOutputResponse {
+    string stdout = 1;
+}
