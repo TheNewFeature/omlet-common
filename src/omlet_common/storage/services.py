@@ -79,7 +79,7 @@ class ArtifactStorageService(BaseStorageService):
         return self._storage.get(object_name=object_name, file_path=file_path, bucket_name=bucket_name)
 
     def put(self, file_path: str, object_name: Optional[str] = None, bucket_name: str = 'artifacts') -> Artifact:
-        object_name = str(uuid.uuid4()) + os.path.splitext(file_path)[-1]
+        object_name = str(uuid.uuid4())     # + os.path.splitext(file_path)[-1]
         result = self._storage.put(file_path=file_path, object_name=object_name, bucket_name=bucket_name)
         return Artifact(etag=result.etag, object_name=result.object_name, version_id=result.version_id)
 
@@ -98,7 +98,7 @@ class CheckpointStorageService(BaseStorageService):
         return self._storage.get(object_name=object_name, file_path=file_path, bucket_name=bucket_name)
 
     def put(self, file_path: str, episode: int, session_id: int, object_name: Optional[str] = None, bucket_name: str = 'checkpoints') -> Checkpoint:
-        object_name = str(uuid.uuid4()) + os.path.splitext(file_path)[-1]
+        object_name = str(uuid.uuid4())     # + os.path.splitext(file_path)[-1]
         result = self._storage.put(file_path=file_path, object_name=object_name, bucket_name=bucket_name)
         return Checkpoint(object_name=result.object_name, etag=result.etag, episode=episode, session_id=session_id)
 
