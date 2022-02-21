@@ -12,6 +12,7 @@ class CreateArtifactRequest(BaseModel):
 class CreateSessionRequest(BaseModel):
     artifact: CreateArtifactRequest
     dataset: str
+    gpu: int
 
 
 class UpdateSessionStateRequest(BaseModel):
