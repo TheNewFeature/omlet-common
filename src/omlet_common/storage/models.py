@@ -23,6 +23,9 @@ class Checkpoint(PydanticTimeMixin, BaseModel):
     etag: str
     object_name: str
 
+    class Config:
+        orm_mode = True
+
 
 class Dataset(PydanticTimeMixin, BaseModel):
     id: Optional[int] = None

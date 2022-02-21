@@ -22,6 +22,13 @@ class UpdateSessionContainerRequest(BaseModel):
     container_id: str
 
 
+class CreateCheckpointRequest(BaseModel):
+    session_id: int
+    object_name: str
+    etag: str
+    episode: int
+
+
 class CreateDatasetRequest(BaseModel):
     display_name: str
     object_name: str

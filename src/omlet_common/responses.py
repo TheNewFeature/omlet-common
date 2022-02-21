@@ -20,6 +20,10 @@ class UpdateSessionContainerResponse(BaseModel):
     session: Session
 
 
+class CreateCheckpointResponse(BaseModel):
+    id: int
+
+
 class CreateDatasetResponse(BaseModel):
     pass
 
