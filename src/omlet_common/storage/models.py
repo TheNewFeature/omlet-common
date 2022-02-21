@@ -20,7 +20,6 @@ class Checkpoint(PydanticTimeMixin, BaseModel):
     id: Optional[int] = None
     session_id: int
     episode: int
-    display_name: str
     etag: str
     object_name: str
 
