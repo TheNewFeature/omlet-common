@@ -1,6 +1,8 @@
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel
+
+from omlet_common.schemas.device import Device
 
 
 class CreateArtifactRequest(BaseModel):
@@ -38,3 +40,8 @@ class CreateDatasetRequest(BaseModel):
 
 class DeleteDatasetRequest(BaseModel):
     object_name: str
+
+
+class CreateDeviceRequest(BaseModel):
+    machine_name: str
+    devices: List[Device]

@@ -1,5 +1,8 @@
+from typing import List, Optional
+
 from pydantic import BaseModel
 
+from omlet_common.schemas.device import Device
 from omlet_common.schemas.session import Session
 
 
@@ -30,3 +33,15 @@ class CreateDatasetResponse(BaseModel):
 
 class DeleteDatasetResponse(BaseModel):
     pass
+
+
+class CreateDeviceResponse(BaseModel):
+    device_id: List[int]
+
+
+class GetDevicesResponse(BaseModel):
+    devices: List[Device]
+
+
+class GetAvailableDeviceResponse(BaseModel):
+    device: Optional[Device]
