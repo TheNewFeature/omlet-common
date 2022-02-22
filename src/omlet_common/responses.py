@@ -13,6 +13,7 @@ class BaseResponse(BaseModel):
 
 class CreateSessionResponse(BaseModel):
     session_id: int
+    name: str
 
 
 class UpdateSessionStateResponse(BaseModel):
