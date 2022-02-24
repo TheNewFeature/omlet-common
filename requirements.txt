@@ -2,4 +2,4 @@ docker
 grpcio
 minio
 pika
-pydantic
+pydantic[email]
